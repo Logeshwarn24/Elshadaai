@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>REGISTER</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -38,11 +39,14 @@
             <tr>
                 <td>Worker Type</td>
                 <td>
-                    <input type="radio" name="work" value="Painter" required>Painter
-                    <input type="radio" name="work" value="Builder">Builder
-                    <input type="radio"  name="work" value="Others">Others
+                    <div class="radio-group">
+                        <label><input type="radio" name="work" value="Painter" required> Painter</label>
+                        <label><input type="radio" name="work" value="Builder"> Builder</label>
+                        <label><input type="radio" name="work" value="Others"> Others</label>
+                    </div>
                 </td>
             </tr>
+            
             <tr>
                 <td>Phone Number</td>
                 <td><input type="number" id="phone" name="phone" placeholder="Enter your number" required></td>
@@ -130,6 +134,15 @@
     });
     </script>
     
-
+    <script>
+        function shownavbar() {
+            document.querySelector('.side-navbar').classList.add('active');
+        }
+    
+        function closenavbar() {
+            document.querySelector('.side-navbar').classList.remove('active');
+        }
+    </script>
+    
 </body>
 </html>

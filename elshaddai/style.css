@@ -452,3 +452,268 @@ p{
     border-radius: 50%;
     z-index: 10000;
 }
+/* Base Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: #fff;
+    position: relative;
+}
+
+.navbar h1 {
+    font-family: 'Fugaz One', cursive;
+    color: #fff;
+    font-size: 24px;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar-links p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Side Navbar Styles */
+.side-navbar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 60%;
+    max-width: 250px;
+    background-color: #444;
+    padding: 1rem;
+    transition: left 0.3s ease;
+    z-index: 999;
+}
+
+.side-navbar.active {
+    left: 0;
+}
+
+.side-navbar p i {
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.side-navbar-links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.side-navbar-links p {
+    margin: 1rem 0;
+}
+
+.side-navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .navbar-links {
+        display: none;
+    }
+
+    .navbar-menu {
+        display: block;
+        color: #fff;
+    }
+
+    .side-navbar {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .side-navbar {
+        display: none;
+    }
+}
+/* Centered Form Table Styling */
+form table {
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+form td {
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: left;
+}
+
+/* Input and Textarea Styling */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="radio"] + label,
+textarea {
+    font-size: 16px;
+    padding: 8px 12px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #009688;
+}
+
+/* Radio Buttons Layout */
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+td input[type="radio"] {
+    width: auto;
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #009688;
+    color: #fff;
+    padding: 10px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #00796b;
+}
+/* Make form container responsive */
+form {
+    width: 100%;
+    max-width: 500px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* Table layout adjustments */
+form table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+form td {
+    padding: 12px 8px;
+    font-size: 16px;
+}
+
+/* Responsive input fields */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #fff;
+    transition: border 0.3s;
+}
+
+/* On focus */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-color: #009688;
+    outline: none;
+}
+
+/* Placeholder style */
+input::placeholder,
+textarea::placeholder {
+    color: #aaa;
+    font-size: 15px;
+}
+
+/* Radio button group */
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.radio-group label {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #009688;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 200px;
+}
+
+.submit-btn:hover {
+    background-color: #00796b;
+}
+
+/* Mobile-specific tweaks (optional, just in case) */
+@media (max-width: 480px) {
+    form td {
+        display: block;
+        width: 100%;
+    }
+
+    form td:first-child {
+        margin-bottom: 6px;
+        font-weight: bold;
+    }
+}
