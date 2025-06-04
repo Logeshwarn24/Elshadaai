@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>REGISTER</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <h1>ELSHADDAI</h1>
+    <div class="navbar-links">
+        <p class="navbar-link"><a href="elshaddaii.html">Home</a></p>
+        <p class="navbar-link"><a href="https://wa.me/qr/MFMD7Z2W2CV6L1">Contact</a></p>
+        <p class="navbar-link"><a href="https://maps.app.goo.gl/vqUKw3EVRn2SQetG6">Location</a></p>
+        <p class="navbar-link"><a href="ELSHADDAIregister.html">Register</a></p>
+    </div>
+</nav>
+
+<!-- Registration Form -->
+<center>
+    <img src="elshaddai logo.jpg" alt="ELSHADDAI" height="60" width="240">
+    <h1>ELSHADDAI HARDWARES 🛒</h1>
+    <h2>PAINTS AND HARDWARES</h2>
+</center>
+
+<hr>
+
+<center>
+    <h2>Registration Form</h2>
+
+    <form id="contactForm">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" id="name" name="name" placeholder="Enter your name" required></td>
+            </tr>
+            <tr>
+                <td>Worker Type</td>
+                <td>
+                    <input type="radio" name="work" value="Painter" required>Painter
+                    <input type="radio" name="work" value="Builder">Builder
+                    <input type="radio"  name="work" value="Others">Others
+                </td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td><input type="number" id="phone" name="phone" placeholder="Enter your number" required></td>
+            </tr>
+            <tr>
+                <td>Email ID</td>
+                <td><input type="email" id="email" name="email" placeholder="Enter your email" required></td>
+            </tr>
+            <tr>
+                <td>Message</td>
+                <td><input type="text" id="message" name="message" placeholder="Enter your message"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit" class="submit-btn">Submit</button></td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- Response message placeholder -->
+    <div id="responseMessage" style="margin-top: 10px;"></div>
+</center>
+
+<hr>
+
+<!-- Footer -->
+<div class="footer">
+    <div class="footer-container">
+        <div class="footer-box-1">
+            <h2 class="headingtext">Elshaddai</h2>
+            <p>.......................................................................</p>
+            <div>
+                <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+                <i class="fa-brands fa-whatsapp" style="color: #ffffff;"></i>
+                <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
+            </div>
+        </div>
+    </div>
+    <p>@2025 Elshaddai.com</p>
+</div>
+
+<!-- JavaScript -->
+<script>
+    document.getElementById("contactForm").addEventListener("submit", async function(e) {
+        e.preventDefault(); // Stop form from reloading the page
+    
+        // Collect input values
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const message = document.getElementById("message").value;
+    
+        // Get the selected worker type safely
+        const workRadio = document.querySelector('input[name="work"]:checked');
+        const work = workRadio ? workRadio.value : null;
+    
+        const responseMessage = document.getElementById("responseMessage");
+    
+        // Validate worker type
+        if (!work) {
+            responseMessage.innerHTML = '<p style="color: red;">Please select a worker type.</p>';
+            return;
+        }
+    
+        try {
+            const response = await fetch("http://localhost:5000/api/contact/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ name, email, phone, message, work })
+            });
+    
+            const data = await response.json();
+    
+            if (response.ok) {
+                responseMessage.innerHTML = '<p style="color: green;">Message sent successfully!</p>';
+                document.getElementById("contactForm").reset(); // Clear form
+            } else {
+                responseMessage.innerHTML = `<p style="color: red;">${data.message || "Failed to send message."}</p>`;
+            }
+        } catch (error) {
+            responseMessage.innerHTML = '<p style="color: red;">Error: Could not connect to server.</p>';
+        }
+    });
+    </script>
+    
+
+</body>
+</html>
