@@ -1,0 +1,454 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #0d1321;
+    color: white;
+}
+
+.navbar h1 {
+    font-family: 'Fugaz One', cursive;
+    font-size: 28px;
+    color: #f0a500;
+}
+
+.navbar-links,
+.side-navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-link a,
+.side-navbar-link a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar-link a:hover {
+    color: #f0a500;
+}
+
+.navbar-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Side Navbar */
+.side-navbar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: #0d1321;
+    padding: 20px;
+    transition: 0.3s ease-in-out;
+    z-index: 10;
+}
+
+.side-navbar-links {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 30px;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    flex-wrap: wrap;
+}
+
+.header-text h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #f0a500;
+}
+
+.header-text p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.header-botten {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #f0a500;
+    border: none;
+    color: #0d1321;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.header-botten a {
+    text-decoration: none;
+    color: #0d1321;
+}
+
+/* Services */
+.service-container-1 {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.service-container-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.service-container-2 div {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.service-container-2 i {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #f0a500;
+}
+
+/* New Arrival */
+.new-arrival {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
+
+.new-arrival-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.new-arrival-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.new-arrival-botten {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background-color: #f0a500;
+    padding: 10px 15px;
+    border: none;
+    color: #0d1321;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Newsletter */
+.news {
+    background-color: #203a43;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.news input.search {
+    padding: 10px;
+    width: 250px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.news button {
+    padding: 10px 20px;
+    background-color: #f0a500;
+    color: #0d1321;
+    border: none;
+    margin-top: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background-color: #0d1321;
+    color: white;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.footer-box-1 {
+    max-width: 300px;
+}
+
+.footer-box-1 .headingtext {
+    font-family: 'Fugaz One', cursive;
+    color: #f0a500;
+}
+
+.footer i {
+    margin: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+    }
+
+    .navbar-menu {
+        display: block;
+    }
+
+    .side-navbar.active {
+        right: 0;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header-img img {
+        margin-top: 20px;
+    }
+}
+/* REGISTER PAGE STYLING */
+
+/* Reuse general styles from homepage */
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background: #f7f8fc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: #0d1321;
+}
+
+center img {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Registration Form */
+table {
+    margin-top: 20px;
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+
+table td {
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus {
+    border-color: #f0a500;
+    box-shadow: 0 0 5px rgba(240, 165, 0, 0.3);
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+input[type="submit"] {
+    padding: 10px 25px;
+    background-color: #f0a500;
+    color: #0d1321;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #d99000;
+}
+
+/* Navbar & Footer reused from home */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #0d1321;
+    color: white;
+}
+
+.navbar h1 {
+    font-family: 'Fugaz One', cursive;
+    color: #f0a500;
+    font-size: 26px;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-link a,
+.side-navbar-link a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar-link a:hover {
+    color: #f0a500;
+}
+
+.footer {
+    background-color: #0d1321;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer .footer-box-1 h2 {
+    font-family: 'Fugaz One', cursive;
+    color: #f0a500;
+}
+
+.footer i {
+    margin: 0 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+    table {
+        width: 90%;
+        padding: 20px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"] {
+        width: 100%;
+    }
+}
+.submit-btn {
+    background: linear-gradient(135deg, #f0a500, #ffcc00);
+    color: #0d1321;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #ffb000, #ffd700);
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+img {
+    width: 90%;           /* Increase width to nearly full */
+    height: 150px;        /* Set a medium height */
+    object-fit: contain;  /* Keep image ratio */
+    border-radius: 8px;   /* Optional: rounded corners */
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2); /* Subtle shadow */
+    margin-top: 10px;
+}
+p{
+    font-weight: bold;
+    text-align: center;
+}
+.video-ad {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 420px;
+    height: 345px;
+    background-color: #000;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.video-ad iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+}
+
+.close-ad {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1;
+    padding: 2px 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10000;
+}
