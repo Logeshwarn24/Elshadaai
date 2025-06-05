@@ -10,3 +10,9 @@ function closenavbar()
 {
     sidenav.style.left="-60%"
 }
+
+
+  function toggleNote(element) {
+    const notesContainer = element.closest('.notes-header')?.nextElementSibling || element.closest('.notes');
+    notesContainer.classList.toggle('active');
+  }
